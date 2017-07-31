@@ -1,0 +1,95 @@
+/* pages/home/home.wxss */
+
+page {
+  background-color: #f0f0f0;
+}
+
+form picker {
+  height: 40rpx;
+  margin: 50rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  text-align: center;
+  vertical-align: middle;
+  color: #2D446A;
+  display: inline-block;
+} 
+.picker-wrap{text-align: center;}
+.picker-wrap .date,.picker-wrap .type{display: inline-block;}
+form .date image,form .type image {
+  width: 28rpx;
+  height: 28rpx;
+}
+form .date image,
+form .date text,form .type image,
+form .type text {
+  vertical-align: middle;
+}
+form .type text {
+ font-size: 28rpx;color: #999;padding-left: 20rpx;
+}
+.group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 120rpx;
+  background: #fff;
+  margin-bottom: 10rpx;
+}
+.group text {
+  padding-left: 38rpx;
+  color: #666;
+  font-size: 32rpx;
+  flex-grow: 1;
+  min-width: 150rpx;
+  max-width: 150rpx;
+}
+.group .yuan {
+  margin-right: 30rpx;
+  text-align: right;
+}
+.group input,
+.group navigator,
+.group .in {
+  flex-grow: 4;
+  color: #2D446A;
+  font-size: 32rpx;
+}
+.group .in {
+  padding-left: 0;
+  color: #666;
+  max-width: 600rpx;
+}
+.group navigator .icon {
+  float: right;
+  margin-right: 30rpx;
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: bottom;
+}
+#money {
+  font-size: 40rpx;
+}
+.group input {
+  font-weight: normal;
+}
+.btn-group {
+  margin: 20rpx 10rpx 0 10rpx;
+}
+form button {
+  display: inline-block;
+  margin-left: 30rpx;
+  width: 320rpx;
+  color: #fff;
+  background-color: #FF8A22;
+}
+form .delete {
+  background-color: #ddd;
+  color: #666;
+}
+
+.placeholder-class {
+  font: 100 30rpx/40rpx 'Heiti SC', 'Helvetica', 'HelveticaNeue', 'Droidsansfallback', 'Droid Sans', 'Dengxian', 'Segoe', 'microsoft yahei';
+  color:#ACACAC;
+}

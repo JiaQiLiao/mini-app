@@ -1,0 +1,8 @@
+<!--mailverified.wxml-->
+<view class="container">
+  <form class="mail-verified" bindsubmit="formSubmit" bindreset="formReset">
+    <text class="info">已经将验证码发送至您的邮箱</text>
+    <input id="verifycode" name="verifycode" type="number" placeholder-class="input-placeholder" placeholder="请输入邮箱验证码" /> 
+    <button formType="submit">确认</button>
+  </form>
+</view>

@@ -1,0 +1,7 @@
+<!--mailset.wxml-->
+<view class="container">
+  <form class="mail-bind" bindsubmit="formSubmit" bindreset="formReset">
+      <input id="mail" name="mail" type="text" value="{{inputMail}}" placeholder-class="input-placeholder" placeholder="请输入您的邮箱" />  
+      <button formType="submit">验证邮箱</button>
+  </form>
+</view>

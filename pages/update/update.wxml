@@ -1,0 +1,70 @@
+<view class="container">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+   <view class="picker-wrap">
+    <picker mode="date" value="{{date}}" start="2001-01-01" end="{{today}}" bindchange="bindDateChange">
+      <view class="date">
+        <image src="../../images/home/calendar.png"></image><text> {{date}} </text><image src="../../images/home/arrow.png"></image>
+      </view>
+    </picker>     
+    <!--AA制收入-->
+     <view class="type" wx:if="{{tempPayClass == 5720}}">        
+       <image src="../../images/home/typeicon.png"></image>       
+       <text >AA制收入</text>
+    </view>
+    <!--AA制支出-->
+      <view class="type" wx:elif="{{tempPayClass == 5720}}">       
+       <text >AA制支出</text>
+      </view>
+       <!--官方定义借入、借出、信用卡等杂项--> 
+     <view class="type" wx:elif="{{tempPayClass >=37 && tempPayClass <=43}}">
+      <text class="in" >{{arrtypeClass[tempPayClass-37]}}</text>
+      </view>
+     <!--官方定义项--> 
+    <picker mode="selector" value="{{tempPayClassIindex}}" range-key="name" range="{{arrtypeClass}}" bindchange="bindTypeChange" wx:else>
+      <view class="date">
+        <image src="../../images/home/typeicon.png"></image><text> {{arrtypeClass[tempPayClassIindex].name}} </text><image src="../../images/home/arrow.png"></image>
+      </view>
+    </picker>
+    <!--官方定义收入项-->
+    <!--<picker mode="selector" value="{{tempPayClassIindex}}" range-key="name" range="{{arrtypeClass}}" bindchange="bindTypeChange" wx:elif="{{tempPayClass >= 31 && tempPayClass <= 36}}">
+      <view class="date">
+        <image src="../../images/home/typeicon.png"></image><text> {{arrtypeClass[tempPayClassIindex].name}} </text><image src="../../images/home/arrow.png"></image>
+      </view>
+    </picker>-->  
+  </view>
+
+    <view class="group">
+      <text>金额：</text>
+      <input id="money" bindinput="onMoneyInput" type="digit" name="money" maxlength="{{inputLength}}" value="{{inputMoney}}" placeholder-class="placeholder-class" placeholder="(请输入金额，最多7位)" />
+      <text class="yuan">元</text> 
+    </view>
+    <!--<view class="group">
+      <text>类别：</text>-->
+    <!--AA制收入-->
+      <!--<text class="in" wx:if="{{tempPayClass == 5720}}">AA制收入</text>-->
+    <!--官方定义收入及自定义收入项-->
+      <!--<text class="in" wx:elif="{{tempUpdateItem.type == 'in'}}">收入</text>-->
+    <!--官方定义支出项-->
+      <!--<navigator wx:elif="{{tempPayClass >= 8 && tempPayClass <= 30}}" url="../class/class" hover-class="" open-type="navigate">
+        {{tempPayCate}}
+        <image class="icon" src="../../images/arrow-right.png"></image>
+      </navigator>-->
+    <!--AA制支出-->
+      <!--<text class="in" wx:elif="{{tempPayClass == 5719}}">AA制支出</text>-->
+    <!--官方定义借入、借出、信用卡等杂项--> 
+      <!--<text class="in" wx:elif="{{tempPayClass >=37 && tempPayClass <=43}}">{{arrPayCate[tempPayClass-8]}}</text>-->
+    <!--自定义支出项-->
+      <!--<text class="in" wx:elif="{{tempUpdateItem.type == 'out'}}">其它杂项</text>-->
+    <!--其他--> 
+      <!--<text class="in" wx:else>其他</text>       
+    </view>-->
+    <view class="group">
+      <text>备注：</text>
+      <input id="title" placeholder-class="placeholder-class" value="{{inputTitle}}" maxlength="30" type="text" name="title" placeholder="（选填）" />  
+    </view>
+    <view class="btn-group">
+      <button class="submit" formType="submit">保存</button>
+      <button class="delete" bindtap="deleteItem">删除</button>
+    </view>
+  </form>  
+</view>

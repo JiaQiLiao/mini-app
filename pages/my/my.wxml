@@ -1,0 +1,37 @@
+<!--my.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="userinfo">
+      <image class="userinfo-avatar" wx:if="{{userInfo.avatarUrl}}" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <image class="userinfo-avatar" wx:else src="../../images/my/avatar.png" background-size="cover"></image>
+      <text wx:if="{{userInfo.nickName}}" class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <text wx:else class="userinfo-nickname">爱记账</text>
+    </view>
+  </view>
+  <view wx:if="{{mobileNumber}}">
+      <view class="reg-info">
+        <view class="item mobile">
+          <text>绑定手机号</text> 
+          <text class="detail mobile-number"> {{ userHideMobile }} </text>       
+        </view>
+        <!--<view class="item mail">
+          <text>绑定邮箱</text>
+          <view wx:if="{{mail}}" class="detail" bindtap="bindNavToMail">
+            <text> {{ userHideMail }} </text>
+            <image class="icon" src="../../images/my/arrow-right.png"></image>
+          </view>
+          <view wx:else class="detail" bindtap="bindNavToMail">
+            <text>立即绑定</text>
+            <image class="icon" src="../../images/my/arrow-right.png"></image>
+          </view>
+        </view>-->
+        <button bindtap="bindNavToAccount">查看账单</button>
+      </view>
+  </view>
+  <view wx:if="{{!mobileNumber}}">
+    <view class="bindbtn">
+      <text>登录后，享受更多服务</text>        
+      <button bindtap="bindNavToLogin">登录</button>
+    </view>
+  </view>
+</view>

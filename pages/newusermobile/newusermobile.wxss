@@ -1,0 +1,61 @@
+.mob {
+  display: flex;
+  margin-top: 100rpx;
+  flex-direction: column;
+  align-items: center;
+}
+.input-placeholder {
+  font-family: 'Heiti SC', 'Helvetica', 'HelveticaNeue', 'Droidsansfallback', 'Droid Sans', 'Dengxian', 'Segoe', 'microsoft yahei';
+  font-size: 16px;
+  color: #a1a1a1;
+}
+.mob input {
+  width: 750rpx;
+  height: 126rpx;
+  margin-bottom: 20rpx;
+  padding-left: 60rpx;
+  font-size: 20px;
+  background-color: #eee;
+}
+.mob button {
+  width: 668rpx;
+  margin: 90rpx auto;
+}
+.mob .code input {
+  display: inline-block;
+  width: 68%;
+}
+.mob .code view {
+  float: right;
+  display: inline-block;
+  background: #eee;
+  width: 32%;
+  height: 126rpx;
+  font-size: 16px;
+  line-height: 126rpx;
+  text-align: center;
+  color: #bc9861;
+  border-left: 1px solid #cbcbcb;
+}
+.mob .code .taped {
+  color: #a1a1a1;
+}
+.check {
+  position: fixed;
+  bottom:100rpx;
+  width: 750rpx;
+  margin-top: 20rpx;
+  font-size: 12px;
+  text-align: center;
+  color: #999;
+}
+.check checkbox-group {
+  display: inline;
+}
+.check text {
+  text-indent: 10px;
+}
+.check navigator {
+  display: inline;
+  color: #333;
+}

@@ -1,0 +1,20 @@
+<!--register.wxml-->
+<view class="container">
+    <form class="mob" bindsubmit="formSubmit" bindreset="formReset">
+        <input id="mobileNumber" name="mobileNumber" type="number" bindinput="getInputNumber" placeholder-class="input-placeholder" placeholder="请输入您的手机号" maxlength="11" focus="true" />
+        <view class="code">
+          <input id="identify" name="identify" type="number" placeholder-class="input-placeholder" placeholder="短信验证码" />
+          <view class="{{isTapgetIdentify?'taped':''}}" bindtap="getIdentify">{{getIdentifyText}}</view>
+        </view>
+        <input id="password" name="password" type="text" password placeholder-class="input-placeholder" placeholder="设置密码（6~16位，不含汉字空格）" maxlength="16" />
+        <button formType="submit">完成</button>
+        <view class="check">
+          <checkbox-group bindchange="checkboxChange">
+            <label wx:for="{{items}}">
+              <checkbox value="{{item.value}}" checked="{{item.checked}}" />我已阅读并同意
+            </label>
+          </checkbox-group>
+          《<navigator url="../agreement/agreement">爱记账用户协议</navigator>》
+        </view>
+    </form>
+</view>

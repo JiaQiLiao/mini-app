@@ -1,0 +1,58 @@
+/* pages/login/login.wxss */
+
+/*header*/
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50rpx;
+}
+
+.logo-icon {
+  width: 160rpx;
+  height: 160rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.logo-name {
+  font-size: 16px;
+  color: #333;
+}
+/*header end*/
+
+/*form*/
+.mail-login {
+  display: flex;
+  margin-top: 50rpx;
+  flex-direction: column;
+  align-items: center;
+}
+.input-placeholder {
+  font-family: 'Heiti SC', 'Helvetica', 'HelveticaNeue', 'Droidsansfallback', 'Droid Sans', 'Dengxian', 'Segoe', 'microsoft yahei';
+  font-size: 16px;
+  color: #a1a1a1;
+}
+.mail-login input {
+  width: 750rpx;
+  height: 126rpx;
+  margin-bottom: 20rpx;
+  padding-left: 60rpx;
+  font-size: 20px;
+  background-color: #eee;
+}
+
+.mail-login button {
+  width: 668rpx;
+  margin: 50rpx auto 20rpx;
+}
+.mail-login .reg {
+  width: 668rpx;
+  margin: 0 auto;
+  padding: 10rpx 0;
+  font-size: 16px;
+  text-align: center;
+  color: #333;
+}
+
+/*form end*/

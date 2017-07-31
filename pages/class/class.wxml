@@ -1,0 +1,7 @@
+<view class="container">
+    <view wx:for="{{arrPayClass}}" wx:key="id" bindtap="tapChoose" wx:for-item="itemName" class="item" id = "{{itemName.category_id}}">
+        <image src="../../images/class/{{itemName.category_id}}.png"></image>
+        <text>{{itemName.category}}</text>
+        <image class="selected-icon" wx:if="{{itemName.isSelected}}" src="../../images/class/right.png"></image>
+    </view> 
+</view>

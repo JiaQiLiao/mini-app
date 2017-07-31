@@ -1,0 +1,84 @@
+/* pages/my/my.wxss */
+
+.header {
+  position: relative;
+  height: 236rpx;
+  color: #fff;
+  background-color: #bc9861;
+  border-bottom: 1px solid #bc9861;
+  text-align: center;
+}
+
+.userinfo {
+  position: absolute;
+  top: 136rpx;
+  left: 50%;
+  margin-left: -375rpx;
+  width: 750rpx;
+  text-align: center;
+}
+
+.userinfo-avatar {
+  display: block;
+  width: 160rpx;
+  height: 160rpx;
+  margin: 0 auto 20rpx;
+  border: 3px solid #fff;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  font-size: 16px;
+  color: #bc9861;
+}
+.bindbtn,
+.reg-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 200rpx auto 0;
+}
+.bindbtn text {
+  margin: 50rpx 0 40rpx;
+  font-size: 30rpx;
+  color: #666;
+}
+.bindbtn button,
+.reg-info button {
+  width: 670rpx;
+}
+
+.reg-info .item {
+  display:flex;
+  align-items:center;
+  height:120rpx;
+  width: 750rpx;
+  margin: 0 auto 20rpx;
+  font-size: 16px;
+  line-height: 120rpx;
+  color: #000;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.reg-info .item text {
+  padding-left:40rpx;
+  flex-grow:1;
+  max-width:250rpx;
+}
+.reg-info .item .detail {
+  flex-grow:2;
+  max-width:500rpx;
+}
+.reg-info .item .detail {
+  text-align: right;
+  padding-right: 40rpx;
+}
+.reg-info .item .detail text {
+  vertical-align: middle;
+}
+.icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+

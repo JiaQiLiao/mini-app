@@ -1,0 +1,148 @@
+/* pages/home/home.wxss */
+
+/*.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}*/
+page {
+  background-color: #f0f0f0;
+}
+.header {
+  position: relative;
+  width: 750rpx;
+  height: 282rpx;
+  text-align: center;
+  padding-top: 40rpx;
+  background: #324b72;
+  background-size: 750rpx 262rpx;
+  color: #fff;
+}
+.header.reflow{
+  margin-top:-1rpx;
+}
+.header image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 750rpx;
+  height: 282rpx;
+  z-index: 0;
+}
+.header text {
+  position: relative;
+  display: block;
+  width: 100%;
+  font-size: 28rpx;
+  z-index: 2;
+}
+.header .total {
+  height: 120rpx;
+  line-height: 120rpx;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.header .total text {
+  display: inline-block;
+  font-size: 38px;
+}
+.tally{position: relative;display: inline-block;  font-size: 28rpx}
+.tally:before{content:'';display: inline-block; width:31rpx;height: 36rpx;background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAkCAMAAABGzRFlAAAAdVBMVEUAAAD////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////li2ZAAAAAJnRSTlMAh2ZpHu9aMy0imfrh8zshqncTnbtFON2mclVK6s/HrJ6TgHQPBsgHexIAAADRSURBVDjLtc3ZjsIwDIVhp00KrWknJN2AmWH3+z8iqjANSYOQWL7b/8iGDzDbkkZY/4RdoxWjf1rkQVcWmuSmpnIRXCDR0J2N4oHrKVU5K+hUjQPXJTBBAJV7Ee1uEO9uEO88CHqrtW6GfhtIv6+7rksgJXWFVMfun5fFQFP9h7HO5pQJ8vu8YHsT7Zliv7NY97zSc8EO8f8pMWy/8l8el4OVedBXdJU9ui/zgXz2/yt9M/Otvd7QVDv20kKVhFrYKe49WjFlseduNNIU9gbedwHT5iRAcYfLmQAAAABJRU5ErkJggg==) no-repeat;background-size: 100%;vertical-align:middle;}
+.tally:after{content:'';display: inline-block;width: 16rpx;height: 28rpx;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAcBAMAAACaHyIpAAAAJFBMVEUAAAD///////////////////////////////////////////+0CY3pAAAAC3RSTlMAjwKInaWgg5lpa/ymuDkAAABLSURBVAjXYyANcAlAGbM3Qhndu6FCLLuhQkzeuw0gLLXdm6FC2TAh1d3boULRuwvgQnAGQjVCP8JEhB3eUFs5IAIIZyAcxilAyDMAuIwZd6i/nqIAAAAASUVORK5CYII=) no-repeat;background-size: 100%;vertical-align:middle;}
+
+.section {
+  margin-top: 50rpx;
+  text-align: center;
+}
+.section .btn{
+  display: inline-block;
+  width: 190rpx;
+  height: 82rpx;
+  font-size: 36rpx;
+  line-height: 78rpx;
+  vertical-align: middle;
+  color: #bc9861;
+  border: 1px solid #bc9861;
+  background-color: #fff;
+}
+.section .pay {
+  border-radius: 5px 0 0 5px;
+}
+.section .income {
+  border-radius: 0 5px 5px 0;
+}
+.section .active {
+  color: #fff;
+  background-color: #bc9861;
+}
+form picker {
+  height: 40rpx;
+  margin: 50rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  text-align: center;
+  vertical-align: middle;
+  color: #bc9861;
+  display: inline-block;
+} 
+.picker-wrap{text-align: center;}
+form .date image {
+  width: 28rpx;
+  height: 28rpx;
+}
+form .date image,
+form .date text {
+  vertical-align: middle;
+}
+.group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 120rpx;
+  background: #fff;
+  margin-bottom: 10rpx;
+}
+.group text {
+  padding-left: 38rpx;
+  color: #acacac;
+  font-size: 32rpx;
+  flex-grow: 1;
+  min-width: 150rpx;
+  max-width: 150rpx;
+}
+.group .yuan {
+  margin-right: 30rpx;
+  text-align: right;
+}
+.group input,
+.group navigator {
+  flex-grow: 4;
+  color: #333;
+  font-size: 32rpx;
+}
+.group navigator {  
+  color: #bc9861; 
+}
+.group navigator .icon {
+  float: right;
+  margin-right: 30rpx;
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: bottom;
+}
+#money {
+  font-size: 40rpx;
+}
+.group input {
+  font-weight: normal;
+}
+form .submit {
+  margin: 20rpx 40rpx 0 40rpx;
+  color: #333;
+  background-color: #ffc12f;
+}
+
+.placeholder-class {
+  font: 100 30rpx/40rpx 'Heiti SC', 'Helvetica', 'HelveticaNeue', 'Droidsansfallback', 'Droid Sans', 'Dengxian', 'Segoe', 'microsoft yahei';
+  color:#ACACAC;
+}

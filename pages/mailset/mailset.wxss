@@ -1,0 +1,27 @@
+/* pages/mailset/mailset.wxss */
+
+/*form*/
+.mail-bind {
+  display: flex;
+  margin-top: 100rpx;
+  flex-direction: column;
+  align-items: center;
+}
+.input-placeholder {
+  font-family: 'Heiti SC', 'Helvetica', 'HelveticaNeue', 'Droidsansfallback', 'Droid Sans', 'Dengxian', 'Segoe', 'microsoft yahei';
+  font-size: 16px;
+  color: #a1a1a1;
+}
+.mail-bind input {
+  width: 750rpx;
+  height: 126rpx;
+  margin-bottom: 20rpx;
+  padding-left: 60rpx;
+  font-size: 20px;
+  background-color: #eee;
+}
+.mail-bind button {
+  width: 668rpx;
+  margin: 20rpx auto;
+}
+/*form end*/

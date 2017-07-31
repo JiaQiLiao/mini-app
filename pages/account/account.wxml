@@ -1,0 +1,107 @@
+<view class="container">
+  <view class="section" wx:for="{{arrAccount}}" wx:for-item="value" wx:key="month">
+    <view class="date">{{value.month}} <text class="month-account">收入:{{value.in/100}}元 / 支出:{{value.out/100}}元</text></view>    
+     <view wx:for="{{value.list}}"  wx:for-item="value2" class="monthlist-wrap" wx:key="day">
+      <view class="month-num">{{value2.day}}</view>
+      <view class="item" wx:for="{{value2.list}}" wx:key="id" wx:for-item="content" data-list="{{value2.list}}" data-index="{{index}}"  bindtap="gotoUpdate" >
+      <!--AA制收入-->  
+      <block wx:if="{{content.category_id == 5720 }}">
+        <image src="../../images/class/type_sys_5720.png"></image>
+        <view class="detail">
+          <text class="category">AA制收入</text>
+          <text class="remark" wx:if="{{content.title}}">{{content.title}}</text>
+          <text class="remark" wx:else>备注：（空）</text>
+          <text class="rmb in"> +{{content.money/100}}<text class="sm">元</text></text>
+        </view>
+      </block>
+      <!--AA制支出-->      
+      <block wx:elif="{{content.category_id == 5719 }}">
+        <image src="../../images/class/type_sys_5719.png"></image>
+        <view class="detail">
+          <text class="category">AA制支出</text>
+          <text class="remark" wx:if="{{content.title}}">{{content.title}}</text>
+          <text class="remark" wx:else>备注：（空）</text>
+          <text class="rmb"> -{{content.money/100}}<text class="sm">元</text></text>
+        </view>
+      </block>
+    <!--官方定义收入及自定义收入项-->
+      <block wx:elif="{{content.type == 'in'}}">
+        <image src="../../images/class/{{arrPayCate[content.category_id].photo || 'type_sys_0030'}}.png"></image>
+        <view class="detail">
+          <text class="category">{{arrPayCate[content.category_id].name || '其他'}}</text>
+          <text class="remark" wx:if="{{content.title}}">{{content.title}}</text>
+          <text class="remark" wx:else>备注：（空）</text>
+          <text class="rmb in "> +{{content.money/100}}<text class="sm">元</text></text>
+        </view>
+      </block>
+      <!--官方定义支出项-->
+      <block wx:elif="{{content.category_id >=8 && content.category_id <=30}}">
+        <image src="../../images/class/{{arrPayCate[content.category_id].photo }}.png"></image>
+        <view class="detail">
+          <text class="category">{{arrPayCate[content.category_id].name}}</text>
+          <text class="remark" wx:if="{{content.title}}">{{content.title}}</text>
+          <text class="remark" wx:else>备注：（空）</text>
+          <text class="rmb"> -{{content.money/100}}<text class="sm">元</text></text>
+        </view>
+      </block>    
+    <!--官方定义借入、借出、信用卡等杂项-->  
+      <block wx:elif="{{content.category_id >=37 && content.category_id <=43}}">
+        <image src="../../images/class/type_sys_0030.png"></image>
+        <view class="detail">
+          <text class="category">{{otherType[content.category_id-37]}}</text>
+          <text class="remark" wx:if="{{content.title}}">{{content.title}}</text>
+          <text class="remark" wx:else>备注：（空）</text>
+          <text class="rmb else">-{{content.money/100}}<text class="sm">元</text></text>
+        </view>
+      </block>
+    <!--自定义支出项-->
+      <block wx:elif="{{content.type == 'out'}}">
+        <image src="../../images/class/{{arrPayCate[content.category_id].photo  || 'type_sys_0030'}}.png"></image>
+        <view class="detail">
+          <text class="category">{{arrPayCate[content.category_id].name || '其他'}}</text>
+          <text class="remark" wx:if="{{content.title}}">{{content.title}}</text>
+          <text class="remark" wx:else>备注：（空）</text>
+          <text class="rmb"> -{{content.money/100}}<text class="sm">元</text></text>
+        </view>
+      </block>
+    <!--其他-->
+      <block wx:else>
+        <image src="../../images/class/type_sys_30.png"></image>
+        <view class="detail">
+          <text class="category">其他</text>
+          <text class="remark" wx:if="{{content.title}}">{{content.title}}</text>
+          <text class="remark" wx:else>备注：（空）</text>
+          <text class="rmb else">{{content.money/100}}<text class="sm">元</text></text>
+        </view>
+      </block>
+
+        <!--<image wx:if="{{content.category_id == 36}}" src="../../images/class/{{content.category_id}}.png"></image>
+        <image wx:elif="{{content.category_id >=8 && content.category_id <=30}}" src="../../images/class/{{content.category_id}}.png"></image>
+        <image wx:elif="{{content.money >=0}}" src="../../images/class/36.png"></image>
+        <image wx:else src="../../images/class/30.png"></image>
+        <view class="detail">
+          <text wx:if="{{content.category_id == 36}}" class="category">收入</text>
+          <text wx:elif="{{content.category_id >=8 && content.category_id <=30}}" class="category">{{arrPayCate[content.category_id-8]}}</text>
+          <text wx:elif="{{content.money >=0}}" class="category">收入</text>
+          <text wx:else class="category">其他杂项</text>
+          <text class="remark" wx:if="{{content.title}}">{{content.title}}</text>
+          <text class="remark" wx:else>备注：（空）</text>
+          <text wx:if="{{content.category_id == 36}}" class="rmb in "> +{{content.money/100}}<text class="sm">元</text></text>
+          <text wx:elif="{{content.category_id >=8 && content.category_id <=30}}" class="rmb"> -{{content.money/100}}<text class="sm">元</text></text>
+          <text wx:elif="{{content.money >=0}}" class="rmb in">  +{{content.money/100}}<text class="sm">元</text></text>
+          <text wx:else class="rmb">{{content.money/100}}<text class="sm">元</text></text>
+        </view>-->
+
+    </view>
+     </view>
+  </view>
+  <view wx:if="{{arrAccount.length == 0}}" class="null">
+    <text>这里空空如也，快去记一笔账吧~</text>    
+  </view>
+   <view wx:elif="{{nomore}}"  class="null2">
+    <text>没有更多了</text>    
+  </view>
+  <view wx:else class="null2">
+    <text>加载中...</text> 
+  </view>
+</view>

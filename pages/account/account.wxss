@@ -1,0 +1,83 @@
+/* pages/account/account.wxss */
+.date {
+    height: 52rpx;
+    font-size: 12px;
+    line-height: 52rpx;
+    padding:0 48rpx;
+    color: #9f8774;
+    background-color: #F6F6F6;
+    border-bottom: 1px solid #e6e8ea;
+}
+.item {
+    position: relative;
+    height: 146rpx;
+    padding: 34rpx 48rpx 34rpx 0;
+    font-size: 16px;
+    color: #333;
+    border-bottom: 1px solid #e6e8ea;
+}
+.item image {
+    position: absolute;
+    top: 50%;
+    height: 75rpx;
+    width: 75rpx;
+    margin-top: -37rpx;
+    left:0;
+}
+.item .detail {
+    margin-left: 100rpx;
+}
+.monthlist-wrap{position: relative;padding-left:104rpx;border-bottom:1px solid #e6e8ea;}
+.monthlist-wrap view:last-child{border-bottom:none;}
+.month-num{top:50rpx;position: absolute;font-size: 40rpx;left:44rpx;}
+.month-account{float: right;color: #999;}
+.item .category,
+.item .remark {
+    display: block;
+    height: 38rpx;
+    line-height: 38rpx;
+}
+.item .remark {
+    width: 380rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 24rpx;
+    color: #a0a1a3;
+}
+.item .rmb {
+    position: absolute;
+    right: 44rpx;
+    top: 50%;
+    margin-top: -8px;
+    font-size: 16px;
+    line-height: 16px;
+    /*color: #ff6161;*/
+    color: #28bb40;
+    vertical-align: middle;
+}
+.item .rmb.in {
+    /*color: #28bb40;*/
+    color: #ff6161;
+}
+.item .rmb.else {
+    color: #666;
+}
+.item .rmb .sm{
+    font-size: 12px;
+    line-height: 12px;
+    vertical-align: middle;
+}
+
+.null {
+    margin-top: 200px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+.null2{
+    height: 146rpx;
+    line-height: 146rpx;
+    text-align: center;
+    font-size: 16px;
+    color: #a0a1a3;}

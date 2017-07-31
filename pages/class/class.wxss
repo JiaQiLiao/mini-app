@@ -1,0 +1,28 @@
+/* pages/class/class.wxss */
+.container {
+    display: flex;
+    flex-direction: column;
+}
+.item {
+    display: flex;
+    align-items: center;
+    height: 110rpx;
+    padding-left: 28rpx;
+    vertical-align: middle;
+    color: #2d446a;
+    border-bottom: 2rpx solid #e2e2e2;
+}
+.item image {
+    height: 75rpx;
+    width: 75rpx;
+}
+.item text {
+    padding-left: 28rpx;
+    font-size: 32rpx;
+    width: 500rpx;
+}
+.item .selected-icon {
+    padding-left: 50rpx;
+    height: 50rpx;
+    width: 50rpx;
+}

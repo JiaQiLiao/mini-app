@@ -1,0 +1,58 @@
+<view class="container">
+  <view class="header {{reflow}}" hidden="{{headerShow}}">
+    <image src="../../images/home/header_bg.jpg"></image>
+    <text>本月累计{{current_0?'消费':''}}{{current_1?'收入':''}}：</text>
+    <view class="total">
+      <text wx:if="{{current_0}}">{{totalOut}}</text>
+      <text wx:if="{{current_1}}">{{totalIn}}</text>
+    </view>
+    <navigator url="../account/account" hover-class="" class="tally" open-type="navigate">
+        账单详情
+      </navigator>   
+  </view>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="section">
+      <view class="btn pay {{current_0?'active':''}}" bindtap="paytap">支出</view>
+      <view class="btn income {{current_1?'active':''}}" bindtap="incometap">收入</view>
+    </view>
+    <view class="picker-wrap">
+    <!--日期选择-->
+    <picker mode="date" value="{{date}}" start="2001-01-01" end="{{today}}" bindchange="bindDateChange">
+      <view class="date">
+        <image src="../../images/home/calendar.png"></image><text> {{date}} </text><image src="../../images/home/arrow.png"></image>
+      </view>
+    </picker>
+    <!--日期选择-->
+    <!--类别选择-->
+    <picker mode="selector" wx:if="{{current_0}}" value="{{tempPayClass}}" range-key="name" range="{{arrPayClass}}" bindchange="bindTypeChange" id="outpicker">
+      <view class="date">
+        <image src="../../images/home/typeicon.png"></image><text> {{arrPayClass[tempPayClass].name}} </text><image src="../../images/home/arrow.png"></image>
+      </view>
+    </picker>
+
+    <picker mode="selector" wx:if="{{current_1}}" value="{{tempIncomeClass}}" range-key="name" range="{{arrIncomeClass}}" bindchange="bindTypeChange" id="inpicker">
+      <view class="date">
+        <image src="../../images/home/typeicon.png"></image><text> {{arrIncomeClass[tempIncomeClass].name}} </text><image src="../../images/home/arrow.png"></image>
+      </view>
+    </picker>
+    <!--类别选择-->
+   </view>
+    <view class="group">
+      <text>金额：</text>
+      <input id="money" bindinput="onMoneyInput" type="digit" name="money" maxlength="{{inputLength}}" value="{{inputMoney}}" placeholder-class="placeholder-class" placeholder="(请输入金额，最多7位)"  bindfocus="bindfocusfun" bindblur="bindblurfun"  confirm-type="done"/>
+      <text class="yuan">元</text> 
+    </view>
+    <!--<view class="group" wx:if="{{current_0}}">
+      <text>类别：</text>
+      <navigator url="../class/class" hover-class="" open-type="navigate">
+        {{tempPayCate}}
+        <image class="icon" src="../../images/arrow-right.png"></image>
+      </navigator>   
+    </view>-->
+    <view class="group">
+      <text>备注：</text>
+      <input id="title" placeholder-class="placeholder-class" value="{{inputTitle}}" maxlength="30" type="text" name="title" placeholder="（选填）" bindfocus="bindfocusfun2" bindblur="bindblurfun2" />  
+    </view>
+    <button class="submit" formType="submit" >记一笔</button>
+  </form>   
+</view>

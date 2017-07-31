@@ -1,0 +1,43 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/account/account",
+    "pages/my/my",
+    "pages/class/class",
+    "pages/mobile/mobile",
+    "pages/agreement/agreement",
+    "pages/update/update",
+    "pages/login/login",
+    "pages/mailverified/mailverified",
+    "pages/mailset/mailset",
+    "pages/newusermobile/newusermobile"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#bc9861",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "爱记账",
+    "backgroundColor": "#fff",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#B2B2B2",
+    "selectedColor": "#bc9861",
+    "backgroundColor": "#FFF",
+    "borderStyle":"white",
+    "list": [{
+      "pagePath": "pages/home/home",
+      "text": "记账",
+      "iconPath":"images/home.png",
+      "selectedIconPath":"images/home_selected.png"
+    }, {
+      "pagePath": "pages/my/my",
+      "text": "我的",
+      "iconPath":"images/my.png",
+      "selectedIconPath":"images/my_selected.png"
+    }]
+  },
+  "networkTimeout": {
+    "request": 10000    
+  },
+  "debug":true
+}

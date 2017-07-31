@@ -1,0 +1,13 @@
+<!--login.wxml-->
+<view class="container">
+  <view class="header">
+      <image class="logo-icon" src="../../images/logo.png" background-size="cover"></image>
+      <text class="logo-name">爱记账</text>
+  </view>
+  <form class="mail-login" bindsubmit="formSubmit">
+      <input id="mail" name="mail" type="text" placeholder-class="input-placeholder" placeholder="请输入您的邮箱/手机号" />
+      <input id="password" name="password" type="text" password placeholder-class="input-placeholder" placeholder="请输入您的密码" maxlength="16" />   
+      <button formType="submit">登录</button>
+      <navigator class="reg" url="../newusermobile/newusermobile" hover-class="">新用户？马上注册</navigator>  
+  </form>
+</view>
